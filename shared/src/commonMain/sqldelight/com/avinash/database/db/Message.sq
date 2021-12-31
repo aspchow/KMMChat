@@ -1,0 +1,19 @@
+createMessageTable:
+CREATE TABLE IF NOT EXISTS Message (
+messageId TEXT PRIMARY KEY,
+userName TEXT NOT NULL,
+messageText TEXT NOT NULL,
+creationTime INTEGER NOT NULL ,
+isMessageReceived INTEGER AS Boolean NOT NULL
+);
+
+getMessages:
+SELECT * FROM Message;
+
+
+upsertMessage:
+INSERT OR REPLACE INTO Message VALUES ?;
+
+
+deleteMessages:
+DELETE FROM Message;

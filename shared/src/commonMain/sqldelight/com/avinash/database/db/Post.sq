@@ -1,0 +1,20 @@
+createPostTable:
+CREATE TABLE IF NOT EXISTS Post(
+id INTEGER PRIMARY KEY,
+userId INTEGER NOT NULL,
+title TEXT NOT NULL,
+body TEXT NOT NULL);
+
+upsertPost:
+INSERT OR REPLACE INTO Post VALUES ?;
+
+deleteAllPosts:
+DELETE FROM Post;
+
+deletePost:
+DELETE FROM Post WHERE id = ?;
+
+getAllPosts:
+SELECT * FROM Post;
+
+
